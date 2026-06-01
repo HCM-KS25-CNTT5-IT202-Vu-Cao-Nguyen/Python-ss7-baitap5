@@ -1,0 +1,72 @@
+Input
+
+Dữ liệu lô hàng được khai báo sẵn:
+
+raw_batch = " LAP-VN-23-001 ; mou-us-24-012 ; KEY-vn-23-abc ; lap-JP-22-045 ; MOn-vn-24-099 "
+
+Người dùng nhập:
+
+Lựa chọn menu (1-4)
+2 số cuối của Serial khi tra cứu
+
+Kiểu dữ liệu:
+
+str
+Output
+Chức năng 1
+
+Hiển thị chuỗi dữ liệu gốc:
+
+ LAP-VN-23-001 ; mou-us-24-012 ; KEY-vn-23-abc ; lap-JP-22-045 ; MOn-vn-24-099
+Chức năng 2
+
+Báo cáo kiểm kê:
+
+MÃ SP    XUẤT XỨ   NĂM SX   SERIAL   TRẠNG THÁI
+LAP      VN        2023     001      Pass
+MOU      US        2024     012      Pass
+KEY      VN        2023     ABC      Lỗi Serial - Reject
+LAP      JP        2022     045      Pass
+MON      VN        2024     099      Pass
+
+Đã giải mã thành công 4 sản phẩm hợp lệ / Tổng số 5 sản phẩm.
+Chức năng 3
+
+Tra cứu:
+
+Nhập đuôi serial: 45
+
+Kết quả:
+
+MÃ SP: LAP
+XUẤT XỨ: JP
+NĂM SX: 2022
+SERIAL: 045
+TRẠNG THÁI: Pass
+2. Đề xuất giải pháp
+Bước 1: Tách từng sản phẩm
+
+Dùng:
+
+products = raw_batch.split(";")
+Bước 2: Làm sạch dữ liệu
+product = product.strip().upper()
+
+Ví dụ:
+
+" mou-us-24-012 "
+
+↓
+
+"MOU-US-24-012"
+Bước 3: Tách 4 thành phần
+parts = product.split("-")
+
+Kết quả:
+
+[
+    "LAP",
+    "VN",
+    "23",
+    "001"
+]

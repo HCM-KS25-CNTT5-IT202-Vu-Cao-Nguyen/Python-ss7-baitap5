@@ -1,0 +1,60 @@
+Khai báo raw_batch
+
+Lặp vô hạn
+
+    Hiển thị menu
+
+    Nhập lựa chọn
+
+    Nếu chọn 1
+        In raw_batch
+
+    Nếu chọn 2
+
+        Tách danh sách sản phẩm
+
+        valid_count = 0
+
+        Với mỗi sản phẩm
+
+            Làm sạch dữ liệu
+            Tách theo dấu "-"
+
+            Lấy:
+                product_code
+                country
+                year
+                serial
+
+            year = "20" + year
+
+            Nếu serial chỉ gồm số
+                status = Pass
+                valid_count += 1
+            Ngược lại
+                status = Reject
+
+            In dữ liệu
+
+        In tổng kết
+
+    Nếu chọn 3
+
+        Nhập đuôi serial
+
+        Duyệt toàn bộ sản phẩm
+
+            Nếu serial[-2:] trùng
+
+                In thông tin
+                found = True
+
+        Nếu không tìm thấy
+            In thông báo
+
+    Nếu chọn 4
+        In lời chào
+        Kết thúc
+
+    Ngược lại
+        Báo lỗi menu
